@@ -52,7 +52,7 @@ export async function apiRequest<T>(
     const response = await fetch(buildUrl(path, options.params), {
       method: options.method ?? "GET",
       headers: { Accept: "application/json", "Content-Type": "application/json" },
-      body: options.body ? JSON.stringify(options.body) : undefined,
+      ...(options.body ? { body: JSON.stringify(options.body) } : {}),
       signal: options.signal ?? controller.signal,
     });
 
@@ -71,7 +71,7 @@ export async function apiRequest<T>(
 
 export const api = {
   get: <T>(path: string, params?: RequestOptions["params"]) =>
-    apiRequest<T>(path, { method: "GET", params }),
+    apiRequest<T>(path, { method: "GET", ...(params ? { params } : {}) }),
   post: <T>(path: string, body?: unknown) =>
-    apiRequest<T>(path, { method: "POST", body }),
+    apiRequest<T>(path, { method: "POST", ...(body ? { body } : {}) }),
 };
