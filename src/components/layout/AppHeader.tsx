@@ -16,20 +16,36 @@ export function AppHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-surface/90 backdrop-blur-md">
       <div className="page-container grid h-14 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 md:max-w-6xl">
+        <div className="flex min-w-0 items-center gap-5">
+          <Link to="/" className="flex min-w-0 items-center gap-2">
+            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-primary text-primary-foreground">
+              <span className="text-[15px] font-extrabold leading-none">T</span>
+            </span>
+            <span className="min-w-0">
+              <span className="block truncate text-[17px] font-extrabold leading-none tracking-tight text-foreground">
+                Teryaq
+              </span>
+              <span className="block truncate text-[10px] font-medium leading-4 text-muted-foreground">
+                إدارة الصيدلية
+              </span>
+            </span>
+          </Link>
 
-        <Link to="/" className="flex min-w-0 items-center gap-2">
-          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-primary text-primary-foreground">
-            <span className="text-[15px] font-extrabold leading-none">T</span>
-          </span>
-          <span className="min-w-0">
-            <span className="block truncate text-[17px] font-extrabold leading-none tracking-tight text-foreground">
-              Teryaq
-            </span>
-            <span className="block truncate text-[10px] font-medium leading-4 text-muted-foreground">
-              إدارة الصيدلية
-            </span>
-          </span>
-        </Link>
+          <nav className="hidden items-center gap-1 md:flex">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                activeOptions={{ exact: link.exact }}
+                className="tap rounded-lg px-2.5 py-1.5 text-[13px] font-bold text-muted-foreground hover:bg-secondary data-[status=active]:bg-primary-soft data-[status=active]:text-primary"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+
 
         <div className="flex shrink-0 items-center gap-1.5">
           <span
