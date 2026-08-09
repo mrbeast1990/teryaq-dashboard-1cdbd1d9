@@ -20,7 +20,7 @@ export function KPICard({
 }: {
   label: string;
   value: string;
-  hint?: string;
+  hint?: string | undefined;
   icon: LucideIcon;
   tone?: KpiTone;
 }) {
