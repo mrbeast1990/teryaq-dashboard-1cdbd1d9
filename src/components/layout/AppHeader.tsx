@@ -2,12 +2,21 @@ import { Link } from "@tanstack/react-router";
 import { Settings, Database } from "lucide-react";
 import { DEMO_CONNECTION } from "@/lib/demo/demo-data";
 
+const navLinks = [
+  { to: "/", label: "الرئيسية", exact: true },
+  { to: "/revenue", label: "الإيرادات", exact: false },
+  { to: "/accounts", label: "الحسابات", exact: false },
+  { to: "/items", label: "الأصناف", exact: false },
+  { to: "/more", label: "المزيد", exact: false },
+] as const;
+
 export function AppHeader() {
   const connected = DEMO_CONNECTION.connected;
 
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-surface/90 backdrop-blur-md">
-      <div className="page-container grid h-14 grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
+      <div className="page-container grid h-14 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 md:max-w-6xl">
+
         <Link to="/" className="flex min-w-0 items-center gap-2">
           <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-primary text-primary-foreground">
             <span className="text-[15px] font-extrabold leading-none">T</span>
