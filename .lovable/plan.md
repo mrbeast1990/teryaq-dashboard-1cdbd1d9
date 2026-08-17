@@ -7,7 +7,7 @@ The goal is to polish the UI/UX of the Reports Center (`/reports`) while preserv
 ### 1. Reports Selection Screen
 - **Logical Grouping**: Organize the 8 report types into three visual categories: المالية (Financial), الحسابات (Accounts), and المخزون (Inventory).
 - **Interactive UI**: Use `CompactListCard` for each report type. Highlight the currently selected report if a selection persists.
-- **Search & Navigation**: Add a compact search bar to quickly find reports.
+- **Immediate scannability**: No search bar needed for these 8 reports; focus on direct access.
 
 ### 2. Report Configuration (Filters)
 - **Compact Controls**: Use `DateRangeControl` and `FilterBar` for period and status selection.
