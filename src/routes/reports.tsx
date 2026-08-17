@@ -68,7 +68,7 @@ function ReportsPage() {
                 key={report.id}
                 title={report.label}
                 icon={report.icon}
-                onClick={() => console.log(`Selected: ${report.id}`)}
+                to="#"
               />
             ))}
           </div>
