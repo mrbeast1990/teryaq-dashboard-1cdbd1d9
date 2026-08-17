@@ -8,11 +8,15 @@ type Props = {
   value?: string;
   icon: LucideIcon;
   to?: string;
+  onClick?: () => void;
 };
 
-export function CompactListCard({ title, description, value, icon: Icon, to }: Props) {
+export function CompactListCard({ title, description, value, icon: Icon, to, onClick }: Props) {
   const content = (
-    <div className="card-surface tap grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 px-3 py-2.5">
+    <div 
+      className="card-surface tap grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 px-3 py-2.5 cursor-pointer"
+      onClick={!to ? onClick : undefined}
+    >
       <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary-soft text-primary">
         <Icon size={17} strokeWidth={2.2} />
       </span>
