@@ -1,11 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { Home, TrendingUp, Users, Package, LayoutGrid } from "lucide-react";
+import { Home, TrendingUp, Users, Package, LayoutGrid, FileText } from "lucide-react";
 
 const items = [
   { to: "/", label: "الرئيسية", icon: Home, exact: true },
   { to: "/revenue", label: "الإيرادات", icon: TrendingUp, exact: false },
   { to: "/accounts", label: "الحسابات", icon: Users, exact: false },
   { to: "/items", label: "الأصناف", icon: Package, exact: false },
+  { to: "/reports", label: "التقارير", icon: FileText, exact: false },
   { to: "/more", label: "المزيد", icon: LayoutGrid, exact: false },
 ] as const;
 
